@@ -28,6 +28,9 @@ run:                            ## Creates and run shell in docker container by 
 build:
 	@docker-compose up --build
 
+shell:                             ## Starting php docker container
+	docker exec -ti -e COLUMNS=$(shell tput cols) -e LINES=$(shell tput lines) $(shell docker ps --filter name='$(PROJECT_NAME)_php' --format "{{ .ID }}") sh
+
 ps:                                ## Show docker process
 	@docker ps --filter name='$(PROJECT_NAME)*'
 

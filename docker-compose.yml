@@ -11,7 +11,7 @@ services:
       dockerfile: ./builder/php.docker
     container_name: "${PROJECT_NAME}_php"
     working_dir: /var/www
-    command: php -S 0.0.0.0:8080 -t .
+    command: php -c /usr/local/etc/php/php.ini-development -S 0.0.0.0:8080 -t ./public
     environment:
       docker: "true"
     ports:
