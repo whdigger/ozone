@@ -1,0 +1,18 @@
+### JetBrains template
+
+# User-specific stuff:
+.idea/
+
+# CMake
+cmake-build-debug/
+cmake-build-release/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Component
+/vendor
+/phpunit.xml
