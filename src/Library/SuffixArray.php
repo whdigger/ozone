@@ -52,7 +52,7 @@ class SuffixArray
             return false;
         }
         $middle = (int)(($left + $right) / 2);
-        $mlr += $this->min($this->lcp($mlr + $left, $mlr), $this->lcp($mlr + $right, $mlr));
+        $mlr += min($this->lcp($mlr + $left, $mlr), $this->lcp($mlr + $right, $mlr));
         $res = $this->cmpPrefix($middle + $mlr, $mlr);
         if ($res == 0) {
             return true;
@@ -98,16 +98,4 @@ class SuffixArray
 
         return $ret;
     }
-
-    /**
-     * @param int $left
-     * @param int $right
-     *
-     * @return int
-     */
-    private function min(int $left, int $right): int
-    {
-        return ($left < $right ? $left : $right);
-    }
-
 }
